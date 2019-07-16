@@ -1,5 +1,6 @@
 package work.andrd.com.savedjobmvp.savedjob;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
@@ -16,8 +17,9 @@ public class SavedJobContract {
     interface Presenter
     {
 
-        void showNoInternet(String msg);
-        void loadSavedJob(String applicant_id, RecyclerView recyclerView);
+        void showNoInternet(Context ctx,String msg);
+        void loadSavedJob(Context ctx,String applicant_id, RecyclerView recyclerView);
+
 
     }
 }

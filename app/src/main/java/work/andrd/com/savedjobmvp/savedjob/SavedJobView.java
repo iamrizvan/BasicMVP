@@ -12,7 +12,6 @@ public class SavedJobView implements SavedJobContract.View, MvpView {
 
     @Override
     public void showLoading() {
-
     }
 
     @Override

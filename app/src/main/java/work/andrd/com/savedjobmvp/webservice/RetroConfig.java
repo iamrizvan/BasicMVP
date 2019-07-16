@@ -25,4 +25,19 @@ public class RetroConfig {
         return api;
     }
 
+
+    public static RetroAPI getRetrofit(String base_url) {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .build();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(base_url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build();
+        RetroAPI api = retrofit.create(RetroAPI.class);
+        return api;
+    }
+
 }
